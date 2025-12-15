@@ -1,36 +1,33 @@
-html, body, p {
+html, body {
     margin: 0;
     padding: 0;
 }
 
-
 .color-wrapper {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
 }
 
 .seed-color {
-    width: 8rem;
-    height: 5rem;
-    border: 5px solid black;
-    border-radius: 6px;
-    border-color: #E5E5E5;
-
+    width: 5rem;
+    height: 3rem;
+    /* Cannot control the input type="border" border color, default is gray and so it is better to just leave this alone */
+    border-color: lightgray;
+    justify-self: center;
 }
 
 .color-themes {
-    padding: 1.25rem;
-    font-size: 2rem;
-    border: 1px solid gray;
-    border-radius: 6px;
-    
-}
-
-option {
-    font-size: .66rem;
+    font-size: .8rem;
+    border: 2px solid lightgray;
+    border-radius: 6px;   
+    width: 150px;
+    height: 50px;
+    padding-left: 1rem;
+    margin-right: 2rem;
 }
 
 select {
@@ -45,6 +42,12 @@ select {
     background-size: 20px;
 }
 
+
+option {
+    font-size: .8rem;
+}
+
+
 select:focus {
     outline: none;
     border-color: #666;
@@ -52,39 +55,95 @@ select:focus {
 
 .btn {
     padding: 1rem;
-    font-size: 1.5rem;
-    border: 1px solid gray;
+    font-size: .8rem;
+    border: 2px solid lightgray;
     border-radius: 6px;
     background-color: white;
     cursor: pointer;
+    width: max-content;
+    grid-column: span 2;
+    justify-self: center;
 }
 
 
 .colors-shown {
     margin-top: 1rem;
-    height: calc(100vh - 200px - 1rem); /* Full viewport minus header height */
+    height: calc(100vh - 150px); /* Full viewport minus header height */
     display: flex;
+    margin-left: .25rem;
+    margin-right: .25rem;
 }
 
 .color {
     width: 100%;
     height: 100%;
-    
 }
 
 .color-text-wrapper {
-    width: 100%;
+    width: 20%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 50px;
 }
 
 p {
-    padding-top: 1rem;
+    text-align: center;
+    margin: auto;
+    font-size: .75rem;
+
 }
 
 
-@media (min-width: 900px) {
-    
+@media (min-width: 400px) {
+    .seed-color {
+        justify-self: end;
+    }
+
+    .color-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        justify-items: start;
+    }
+
+    .btn {
+        grid-column: initial;
+        margin-right: 1rem;
+        justify-self: start;
+    }
+
+    .color-themes {
+        margin: 0
+    }
+
+    .colors-shown {
+        height: calc(100vh - 85px); /* Full viewport minus header height */
+    }
 }
+
+
+@media (min-width: 600px) {
+
+    .color-themes {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 800px) {
+
+    .color-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 250px 1fr;
+        grid-template-rows: 1fr;
+        justify-items: start;
+    }
+
+    .colors-shown {
+        height: calc(100vh - 99px); /* Full viewport minus header height */
+        margin: 2rem 1rem 0;
+    }
+
+}
+
