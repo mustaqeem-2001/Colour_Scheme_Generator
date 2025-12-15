@@ -16,7 +16,7 @@ html, body {
     width: 5rem;
     height: 3rem;
     /* Cannot control the input type="border" border color, default is gray and so it is better to just leave this alone */
-    border-color: lightgray;
+    border-color: white;
     justify-self: center;
 }
 
