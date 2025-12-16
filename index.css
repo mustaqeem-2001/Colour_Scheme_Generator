@@ -15,6 +15,7 @@ option,
 input {
     color: #000;
     -webkit-text-fill-color: #000; /* iOS fix */
+    background-color: white;
 }
 
 
