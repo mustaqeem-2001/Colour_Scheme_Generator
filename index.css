@@ -4,6 +4,21 @@ html, body {
     color: black;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button,
+select,
+option,
+input {
+    color: #000;
+    -webkit-text-fill-color: #000; /* iOS fix */
+}
+
+
+
 .color-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -19,6 +34,8 @@ html, body {
     /* Cannot control the input type="border" border color, default is gray and so it is better to just leave this alone */
     border-color: white;
     justify-self: center;
+    border-radius: 0;
+    border: none;
 }
 
 .color-themes {
