@@ -35,7 +35,7 @@ input {
     border-color: white;
     justify-self: center;
     border-radius: 0;
-    border: none;
+    border: 1px solid lightgray;
 }
 
 .color-themes {
